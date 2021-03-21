@@ -34,6 +34,12 @@ private extension CitiesWeatherView {
         }
     }
     
+    private var clearCitiesList: some View {
+        Button("Clear") {
+            viewModel.clearCitiesList()
+        }
+    }
+    
     private var citiesView: some View {
         NavigationView {
             citiesTable
@@ -49,7 +55,7 @@ private extension CitiesWeatherView {
         }
         .padding(.top)
         .navigationTitle("WeatherSUI🌧")
-        .navigationBarItems(trailing: addCityButton)
+        .navigationBarItems(leading: clearCitiesList, trailing: addCityButton)
     }
     
     private func makeCityRow(with currentWeather: CurrentWeather) -> some View {

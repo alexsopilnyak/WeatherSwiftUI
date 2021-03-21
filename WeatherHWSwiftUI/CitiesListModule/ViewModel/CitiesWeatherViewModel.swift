@@ -68,4 +68,8 @@ extension CitiesWeatherViewModel {
         fetchWeather(for: city)
         
     }
+    
+    func clearCitiesList() {
+        currentWeather = []
+    }
 }
